@@ -1,10 +1,3 @@
-C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.csproj.AssemblyReference.cache
-C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.AssemblyInfoInputs.cache
-C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.AssemblyInfo.cs
-C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.csproj.CoreCompileInputs.cache
-C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\bin\Debug\net6.0\appsettings.json
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\bin\Debug\net6.0\GerenciadorEscolar.exe
@@ -33,6 +26,13 @@ C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\Gerencia
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.csproj.AssemblyReference.cache
+C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.AssemblyInfoInputs.cache
+C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.AssemblyInfo.cs
+C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.csproj.CoreCompileInputs.cache
+C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\staticwebassets\msbuild.GerenciadorEscolar.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\staticwebassets\msbuild.build.GerenciadorEscolar.props
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.GerenciadorEscolar.props

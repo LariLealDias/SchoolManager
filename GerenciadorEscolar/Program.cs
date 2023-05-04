@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//Add services to the container.
 #region config Mysql E Proxie
 var connectionString = builder.Configuration.GetConnectionString("SchoolManagerConnection");
 
 builder.Services.AddDbContext<SchoolManagerContext>(opts =>
-    opts.UseLazyLoadingProxies().UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
+    opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
 );
-#endregion
+#endregion .UseLazyLoadingProxies()
 
 #region AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
