@@ -11,6 +11,7 @@ namespace GerenciadorEscolar.Controllers;
 [Route("[controller]")]
 public class ClassController : ControllerBase
 {
+    //Dependence Injection
     private SchoolManagerContext _contex;
     private IMapper _mapper;
     public ClassController(SchoolManagerContext contex, IMapper mapper)
@@ -25,11 +26,11 @@ public class ClassController : ControllerBase
         try
         {
             ClassModel classModel = _mapper.Map<ClassModel>(classDto);
-            _contex.Class.Add(classModel);
+            _contex.Classes.Add(classModel);
             _contex.SaveChanges();
             return CreatedAtAction(nameof(GetClassById),
                                     new { id = classModel.Id },
-                                    _contex.Class);
+                                    classModel);
         } catch (Exception ex)
         {
             return BadRequest(ex.Message);
@@ -41,7 +42,7 @@ public class ClassController : ControllerBase
     public IEnumerable<ReadClassDto> GetClass([FromQuery] int skip = 0,
                                             [FromQuery] int take = 10)
     {
-        return _mapper.Map<List<ReadClassDto>>(_contex.Class.Skip(skip).Take(take));
+        return _mapper.Map<List<ReadClassDto>>(_contex.Classes.Skip(skip).Take(take));
     }
 
 
@@ -50,7 +51,7 @@ public class ClassController : ControllerBase
     {
         try
         {
-            var findClassById = _contex.Class.FirstOrDefault(x => x.Id == id);
+            var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
             if (findClassById == null)
             {
                 return NotFound();
@@ -66,11 +67,11 @@ public class ClassController : ControllerBase
 
 
     [HttpPatch("{id}")]
-    public IActionResult PartiallyUpdate(int id, JsonPatchDocument<UpdateClassDto> patch)
+    public IActionResult PartiallyUpdateClass(int id, JsonPatchDocument<UpdateClassDto> patch)
     {
         try
         {
-            var findClassById = _contex.Class.FirstOrDefault(x => x.Id == id);
+            var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
             if (findClassById == null)
             {
                 return NotFound();
@@ -100,7 +101,7 @@ public class ClassController : ControllerBase
     {
         try
         {
-            var findClassById = _contex.Class.FirstOrDefault(x => x.Id == id);
+            var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
             if (findClassById == null)
             {
                 return NotFound();

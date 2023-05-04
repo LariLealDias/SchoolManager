@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolManager.Data;
 
@@ -10,9 +11,10 @@ using SchoolManager.Data;
 namespace GerenciadorEscolar.Migrations
 {
     [DbContext(typeof(SchoolManagerContext))]
-    partial class SchoolManagerContextModelSnapshot : ModelSnapshot
+    [Migration("20230504223311_Adjusting table name of Class and creating table for Student")]
+    partial class AdjustingtablenameofClassandcreatingtableforStudent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,8 +70,8 @@ namespace GerenciadorEscolar.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<long>("PhoneNumber")
-                        .HasColumnType("bigint");
+                    b.Property<float>("PhoneNumber")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 

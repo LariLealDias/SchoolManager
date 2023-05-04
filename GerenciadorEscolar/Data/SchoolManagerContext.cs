@@ -10,5 +10,7 @@ public class SchoolManagerContext : DbContext
     {
 
     }
-    public DbSet<ClassModel> Class { get; set; }
+    public DbSet<ClassModel> Classes { get; set; }
+    public DbSet<StudentModel> Students { get; set; }
+
 }

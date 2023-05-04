@@ -28,7 +28,7 @@ public class StudentModel
 
     [Required(ErrorMessage = "Fild PhoneNumber is required")]
     [RegularExpression("^[0-9]*$", ErrorMessage = "Only numbers are allowed.")]
-    public float PhoneNumber { get; set; }
+    public long PhoneNumber { get; set; }
 
 
     [Required(ErrorMessage = "Fild BirthDate is required")]
