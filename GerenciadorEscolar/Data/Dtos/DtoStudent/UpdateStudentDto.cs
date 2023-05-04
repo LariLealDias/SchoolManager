@@ -1,15 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Security.Claims;
 
-namespace GerenciadorEscolar.Models;
+namespace GerenciadorEscolar.Data.Dtos.DtoStudent;
 
-public class StudentModel
+public class UpdateStudentDto
 {
-    [Key]
-    //[Required]
-    public int Id { get; set; }
-
     [Required(ErrorMessage = "Fild FirstName is required")]
     [StringLength(50, ErrorMessage = "Fild FistName could only aceppt till 50 characters")]
     public string FirstName { get; set; }
@@ -35,14 +29,5 @@ public class StudentModel
     [DataType(DataType.Date, ErrorMessage = "Fild BirthDate has an invalid format. Follow the format:yyyy-MM-dd")]
     public DateTime BirthDate { get; set; }
 
-
-    ////Relacionando 1 Student para 1 Class
-    //public int ClassModelId { get; set; }
-    //public virtual ClassModel ClassModel { get; set; }
-
-    //public virtual ICollection<ClassModel> ClassModel { get; set; }
-    //public int ClassId { get; set; }
-    //public ClassModel ClassModel { get; set; }
-
-
+    public DateTime? UpdatedAt { get; } = DateTime.Now;
 }

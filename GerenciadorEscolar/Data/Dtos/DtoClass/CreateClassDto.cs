@@ -24,4 +24,6 @@ public class CreateClassDto
     [StringLength(30, ErrorMessage = "Fild Shift could only aceppt 30 characters")]
     //turno/ periodo
     public string Shift { get; set; }
+
+    public DateTime? CreatedAt { get; } = DateTime.Now;
 }
