@@ -37,12 +37,8 @@ public class StudentModel
 
 
     ////Relacionando 1 Student para 1 Class
-    //public int ClassModelId { get; set; }
-    //public virtual ClassModel ClassModel { get; set; }
-
-    //public virtual ICollection<ClassModel> ClassModel { get; set; }
-    //public int ClassId { get; set; }
-    //public ClassModel ClassModel { get; set; }
+    public int ClassModelId { get; set; }
+    public virtual ClassModel ClassModel { get; set; }
 
 
 }

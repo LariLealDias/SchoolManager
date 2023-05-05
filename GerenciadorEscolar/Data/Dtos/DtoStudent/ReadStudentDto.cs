@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GerenciadorEscolar.Data.Dtos.DtoClass;
+using System.ComponentModel.DataAnnotations;
 
 namespace GerenciadorEscolar.Data.Dtos.DtoStudent;
 
@@ -12,4 +13,8 @@ public class ReadStudentDto
     public DateTime BirthDate { get; set; }
 
     public DateTime? DateTimeStamp { get; } = DateTime.Now;
+
+    //linking 1 Student with 1 Class
+    public ReadClassDto readClassDto { get; set; }
+
 }

@@ -36,11 +36,8 @@ public class ClassModel
 
 
     //Acessando o relacionamento 1 Student para 1 Class
-    //public virtual StudentModel StudentModel { get; set; }
-    //[ForeignKey("StudentModel")]
-    //public int StudentModelId { get; set; }
-    //public StudentModel StudentModel { get; set; }
-    //public ICollection<StudentModel> StudentModel { get; set; }
+    public virtual StudentModel StudentModel { get; set; }
+
 
 
 

@@ -30,4 +30,8 @@ public class CreateStudentDto
     public DateTime BirthDate { get; set; }
 
     public DateTime? CreatedAt { get; } = DateTime.Now;
+
+    //linking 1 Student with 1 Class
+    public int ClassModelId { get; set; }
+
 }

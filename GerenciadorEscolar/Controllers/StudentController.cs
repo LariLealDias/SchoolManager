@@ -27,6 +27,7 @@ public class StudentController : ControllerBase
         try
         {
             StudentModel studentModel = _mapper.Map<StudentModel>(studentDto);
+            //return Ok(studentDto);
             _contex.Students.Add(studentModel);
             _contex.SaveChanges();
             return CreatedAtAction(nameof(GetStudentById), 
@@ -39,6 +40,7 @@ public class StudentController : ControllerBase
         }
     }
 
+    [HttpGet]
     public IEnumerable<ReadStudentDto> GetStudent([FromQuery] int skip = 0,
                                                   [FromQuery] int take = 10)
     {
