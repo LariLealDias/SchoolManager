@@ -33,4 +33,9 @@ public class TeacherModel
     [DataType(DataType.Date, ErrorMessage = "Fild BirthDate has an invalid format. Follow the format:yyyy-MM-dd")]
     public DateTime BirthDate { get; set; }
 
+
+    ////Relating 1 Teacher to 1 Subject
+    public int SubjectModelId { get; set; }
+    public virtual SubjectModel SubjectModel { get; set; }
+
 }
