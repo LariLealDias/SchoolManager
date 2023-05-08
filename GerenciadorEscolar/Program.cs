@@ -1,16 +1,23 @@
 using SchoolManager.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args) ;
+
+
+// Configuração do logging no console
+builder.Logging.AddConsole();
+
 
 //Add services to the container.
 #region config Mysql E Proxie
 var connectionString = builder.Configuration.GetConnectionString("SchoolManagerConnection");
 
 builder.Services.AddDbContext<SchoolManagerContext>(opts =>
-    opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
+    opts.UseLazyLoadingProxies().UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
 );
-#endregion .UseLazyLoadingProxies()
+#endregion 
 
 #region AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

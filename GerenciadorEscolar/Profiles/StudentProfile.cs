@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GerenciadorEscolar.Data.Dtos.DtoClass;
 using GerenciadorEscolar.Data.Dtos.DtoStudent;
 using GerenciadorEscolar.Models;
 
@@ -11,11 +12,13 @@ public class StudentProfile : Profile
         CreateMap<CreateStudentDto, StudentModel>();
 
         CreateMap<StudentModel, ReadStudentDto>()
-            //.ForMember(readStudentDto => readStudentDto.readClassDto,
-            //opts => opts.MapFrom(student => student.ClassModel))
+            .ForMember(readStudentDto => readStudentDto.ReadClassDto,
+            opts => opts.MapFrom(student => student.ClassModel))
             ;
 
         CreateMap<UpdateStudentDto, StudentModel>();
         CreateMap<StudentModel, UpdateStudentDto>();
+
+
     }
 }

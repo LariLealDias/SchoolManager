@@ -15,6 +15,6 @@ public class ReadStudentDto
     public DateTime? DateTimeStamp { get; } = DateTime.Now;
 
     //linking 1 Student with 1 Class
-    public ReadClassDto readClassDto { get; set; }
+    public ReadClassDto ReadClassDto { get; set; }
 
 }

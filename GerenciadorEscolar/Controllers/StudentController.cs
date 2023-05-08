@@ -14,10 +14,14 @@ public class StudentController : ControllerBase
     //Dependence Injection
     private SchoolManagerContext _contex;
     private IMapper _mapper;
-    public StudentController(SchoolManagerContext contex, IMapper mapper)
+    private readonly ILogger<StudentController> _log;
+
+
+    public StudentController(SchoolManagerContext contex, IMapper mapper, ILogger<StudentController> log)
     {
         _contex = contex;
         _mapper = mapper;
+        _log = log;
     }
 
 
@@ -27,7 +31,6 @@ public class StudentController : ControllerBase
         try
         {
             StudentModel studentModel = _mapper.Map<StudentModel>(studentDto);
-            //return Ok(studentDto);
             _contex.Students.Add(studentModel);
             _contex.SaveChanges();
             return CreatedAtAction(nameof(GetStudentById), 
@@ -44,7 +47,18 @@ public class StudentController : ControllerBase
     public IEnumerable<ReadStudentDto> GetStudent([FromQuery] int skip = 0,
                                                   [FromQuery] int take = 10)
     {
-        return _mapper.Map<List<ReadStudentDto>>(_contex.Students.Skip(skip).Take(take));
+        //_log.LogInformation("Fui chamado");
+
+        var allStudents = _mapper.Map<List<ReadStudentDto>>(_contex.Students.Skip(skip).Take(take).ToList());
+        
+        // Verifica se a lista de estudantes não está vazia
+        if (allStudents.Count == 0)
+        {
+            string errorMessage = "  A consulta não retornou estudantes válidos.";
+            _log.LogError(errorMessage);
+        }
+
+        return _mapper.Map<List<ReadStudentDto>>(allStudents);
     }
 
 
