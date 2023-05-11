@@ -47,18 +47,25 @@ public class StudentController : ControllerBase
     public IEnumerable<ReadStudentDto> GetStudent([FromQuery] int skip = 0,
                                                   [FromQuery] int take = 10)
     {
-        //_log.LogInformation("Fui chamado");
-
-        var allStudents = _mapper.Map<List<ReadStudentDto>>(_contex.Students.Skip(skip).Take(take).ToList());
-        
-        // Verifica se a lista de estudantes não está vazia
-        if (allStudents.Count == 0)
+        try
         {
-            string errorMessage = "  A consulta não retornou estudantes válidos.";
-            _log.LogError(errorMessage);
-        }
+            //_log.LogInformation("Fui chamado");
 
-        return _mapper.Map<List<ReadStudentDto>>(allStudents);
+            var allStudents = _mapper.Map<List<ReadStudentDto>>(_contex.Students.Skip(skip).Take(take).ToList());
+
+            // Verifica se a lista de estudantes não está vazia
+            if (allStudents.Count == 0)
+            {
+                string errorMessage = "  A consulta não retornou estudantes válidos.";
+                _log.LogError(errorMessage);
+            }
+
+            return _mapper.Map<List<ReadStudentDto>>(allStudents);
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
     }
 
 
