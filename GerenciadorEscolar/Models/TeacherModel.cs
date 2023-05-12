@@ -41,4 +41,8 @@ public class TeacherModel
 
     //Relating 1 Teacher to multiple Class
     public virtual ICollection<ClassModel> Classes { get; set; }
+
+
+    //Relating Teacher to ClassesSchedules 
+    public virtual ICollection<ClassScheduleModel> ClassesSchedules { get; set; }
 }

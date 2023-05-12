@@ -39,12 +39,16 @@ public class ClassModel
 
 
 
-    //Accessing relationship 1 Student to multiple Subjects
+    //Accessing relationship 1 Class to multiple Subjects
     public virtual ICollection<SubjectModel> Subjects { get; set; }
 
 
     //Relating 1 Teacher to multiple Class
     public int? TeacherModelId { get; set; }
     public virtual TeacherModel TeacherModel { get; set; }
+
+
+    //Relating Class to ClassesSchedules 
+    public virtual ICollection<ClassScheduleModel> ClassesSchedules { get; set; }
 
 }
