@@ -21,7 +21,7 @@ API de gerenciamento escolar
 
 
 ## 📝 DESCRIÇÃO
-API RESTfull e Fluent API que se comunica com o banco de dados MySQL com entidades de relacionamento. 
+API RESTfull e Fluent API que se comunica com o banco de dados MySQL com entidades de relacionamentos a partir de rotas que realizam CRUD
 
 ##### Entidades
 - Aluno (Student)
