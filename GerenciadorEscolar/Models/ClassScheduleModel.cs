@@ -4,6 +4,9 @@ namespace GerenciadorEscolar.Models;
 
 public class ClassScheduleModel
 {
+    [Key]
+    public int Id { get; set; }
+
     [Required(ErrorMessage = "Fild ClassTime is required -- Follow the type HH:mm")]
     [DataType(DataType.Time)]
     public DateTime ClassTime { get; set; }

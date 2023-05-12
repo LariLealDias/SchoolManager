@@ -2,6 +2,7 @@
 
 public class ReadClassScheduleDto
 {
+    public int Id { get; set; }
     public DateTime ClassTime { get; set; }
     public int TeacherModelId { get; set; }
     public int ClassModelId { get; set; }

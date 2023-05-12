@@ -67,4 +67,6 @@ public class ClassScheduleController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+
+
 }
