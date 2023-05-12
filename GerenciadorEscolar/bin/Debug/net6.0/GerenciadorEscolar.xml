@@ -4,6 +4,52 @@
         <name>GerenciadorEscolar</name>
     </assembly>
     <members>
+        <member name="M:GerenciadorEscolar.Controllers.ClassController.CreateClass(GerenciadorEscolar.Data.Dtos.DtoClass.CreateClassDto)">
+            <summary>
+            Criar uma Turma ao banco de dados e retornar informações no Header
+            </summary>
+            <param name="classDto">Objeto com os campos necessários para criação de um Aluno</param>
+            <returns> retornar seus dados com Location no Header </returns>
+            <response code="201">Caso inserção seja feita com sucesso</response>
+            <response code="400">Erro ao criar o Turma</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.ClassController.GetClass(System.Int32,System.Int32)">
+            <summary>
+            Retorna uma lista de Turmas do banco de dados conforme a paginação
+            </summary>
+            <param name="skip">primeiro dado para a paginação </param>
+            <param name="take">ultimo dado para a paginação</param>
+            <returns> lista mapeada com todas as instancias </returns>
+            <response code="200">Caso o retorno seja feito com sucesso</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.ClassController.GetClassById(System.Int32)">
+            <summary>
+            Retorna 1 objeto de Turma do banco de dados conforme seu Id
+            </summary>
+            <param name="id"> dado para encontra o Turma especifico no banco de dados </param>
+            <returns> dado de um um único Turma </returns>
+            <response code="200">Caso o retorno seja feito com sucesso</response>
+            <response code="400">Erro ao criar o aluno</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.ClassController.PartiallyUpdateClass(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{GerenciadorEscolar.Data.Dtos.DtoClass.UpdateClassDto})">
+            <summary>
+            Atualiza objeto de Turma do banco de dados conforme seu Id
+            </summary>
+            <param name="id"> dado para encontrar uma Turma especifica no banco de dados </param>
+            <param name="patch"> dado para configurar a modificação parcial do objeto </param>
+            <returns> dados de uma única Turma que foi modificado </returns>
+            <response code="200">Caso o retorno seja feito com sucesso</response>
+            <response code="400">Erro ao criar o Turma</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.ClassController.DeleteClass(System.Int32)">
+            <summary>
+            Deleta objeto de Turma do banco de dados conforme seu Id
+            </summary>
+            <param name="id"> dado para encontra a Turma especifica no banco de dados </param>
+            <returns> dados de uma única Turma que foi modificado </returns>
+            <response code="204">Caso o retorno seja feito com sucesso</response>
+            <response code="400">Erro ao criar a Turma</response>
+        </member>
         <member name="M:GerenciadorEscolar.Controllers.StudentController.CreateStudent(GerenciadorEscolar.Data.Dtos.DtoStudent.CreateStudentDto)">
             <summary>
             Criar um Aluno ao banco de dados e retornar informações no Header
