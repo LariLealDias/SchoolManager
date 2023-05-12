@@ -47,3 +47,5 @@ C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\Gerencia
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.pdb
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.genruntimeconfig.cache
 C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\ref\GerenciadorEscolar.dll
+C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\bin\Debug\net6.0\GerenciadorEscolar.xml
+C:\Users\laril\OneDrive\Documentos\Projetos pessoais\GerenciadorEscolar\GerenciadorEscolar\obj\Debug\net6.0\GerenciadorEscolar.xml
