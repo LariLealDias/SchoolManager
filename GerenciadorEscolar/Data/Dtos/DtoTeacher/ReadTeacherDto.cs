@@ -1,6 +1,5 @@
-﻿using GerenciadorEscolar.Data.Dtos.DtoSubject;
-using GerenciadorEscolar.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using GerenciadorEscolar.Data.Dtos.DtoClass;
+using GerenciadorEscolar.Data.Dtos.DtoSubject;
 
 namespace GerenciadorEscolar.Data.Dtos.DtoTeacher;
 
@@ -15,6 +14,7 @@ public class ReadTeacherDto
     public DateTime? DateTimeStamp { get; } = DateTime.Now;
 
 
-    //Relating
     public ReadSubjectDto ReadSubjectDto { get; set; }
+
+    public ICollection<ReadClassDto> ReadClassDto { get; set; }
 }

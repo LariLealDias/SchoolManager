@@ -34,7 +34,6 @@ public class ClassModel
 
 
 
-
     //Accessing relationship 1 Student to 1 Class
     public virtual StudentModel StudentModel { get; set; }
 
@@ -42,4 +41,10 @@ public class ClassModel
 
     //Accessing relationship 1 Student to multiple Subjects
     public virtual ICollection<SubjectModel> Subjects { get; set; }
+
+
+    //Relating 1 Teacher to multiple Class
+    public int? TeacherModelId { get; set; }
+    public virtual TeacherModel TeacherModel { get; set; }
+
 }

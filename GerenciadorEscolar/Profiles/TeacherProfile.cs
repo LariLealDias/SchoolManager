@@ -13,6 +13,8 @@ public class TeacherProfile : Profile
         CreateMap<TeacherModel, ReadTeacherDto>()
             .ForMember(readTeacherDto => readTeacherDto.ReadSubjectDto,
             opts => opts.MapFrom(teacher => teacher.SubjectModel))
+            .ForMember(readTeacherDto => readTeacherDto.ReadClassDto, 
+            opts => opts.MapFrom(teacher => teacher.Classes))
             ;
 
         CreateMap<UpdateTeacherDto, TeacherModel>();

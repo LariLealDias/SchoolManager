@@ -34,8 +34,11 @@ public class TeacherModel
     public DateTime BirthDate { get; set; }
 
 
-    ////Relating 1 Teacher to 1 Subject
+    //Relating 1 Teacher to 1 Subject
     public int SubjectModelId { get; set; }
     public virtual SubjectModel SubjectModel { get; set; }
 
+
+    //Relating 1 Teacher to multiple Class
+    public virtual ICollection<ClassModel> Classes { get; set; }
 }
