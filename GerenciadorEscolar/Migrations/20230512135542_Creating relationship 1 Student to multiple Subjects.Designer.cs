@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolManager.Data;
 
@@ -10,9 +11,10 @@ using SchoolManager.Data;
 namespace GerenciadorEscolar.Migrations
 {
     [DbContext(typeof(SchoolManagerContext))]
-    partial class SchoolManagerContextModelSnapshot : ModelSnapshot
+    [Migration("20230512135542_Creating relationship 1 Student to multiple Subjects")]
+    partial class Creatingrelationship1StudenttomultipleSubjects
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

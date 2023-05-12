@@ -35,11 +35,11 @@ public class ClassModel
 
 
 
-    //Acessando o relacionamento 1 Student para 1 Class
+    //Accessing relationship 1 Student to 1 Class
     public virtual StudentModel StudentModel { get; set; }
 
 
 
-
-
+    //Accessing relationship 1 Student to multiple Subjects
+    public virtual ICollection<SubjectModel> Subjects { get; set; }
 }
