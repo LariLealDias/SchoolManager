@@ -49,6 +49,6 @@ public class ClassModel
 
 
     //Relating Class to ClassesSchedules 
-    public virtual ICollection<ClassScheduleModel> ClassesSchedules { get; set; }
+    public virtual ICollection<ClassScheduleModel> ClassSchedules { get; set; }
 
 }

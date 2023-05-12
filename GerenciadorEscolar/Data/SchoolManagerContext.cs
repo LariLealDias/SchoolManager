@@ -22,11 +22,11 @@ public class SchoolManagerContext : DbContext
                                                  });
         modelBuilder.Entity<ClassScheduleModel>()
            .HasOne(classScheduleModel => classScheduleModel.ClassModel)
-           .WithMany(classModel => classModel.ClassesSchedules)
+           .WithMany(classModel => classModel.ClassSchedules)
            .HasForeignKey(classScheduleModel => classScheduleModel.ClassModelId);
         modelBuilder.Entity<ClassScheduleModel>()
           .HasOne(classScheduleModel => classScheduleModel.TeacherModel)
-          .WithMany(teacherModel => teacherModel.ClassesSchedules)
+          .WithMany(teacherModel => teacherModel.ClassSchedules)
           .HasForeignKey(classScheduleModel => classScheduleModel.TeacherModelId);
     }
 
@@ -34,5 +34,6 @@ public class SchoolManagerContext : DbContext
     public DbSet<StudentModel> Students { get; set; }
     public DbSet<SubjectModel> Subjects { get; set; }
     public DbSet<TeacherModel> Teachers { get; set; }
+    public DbSet<ClassScheduleModel> ClassSchedules { get; set; }
 
 }

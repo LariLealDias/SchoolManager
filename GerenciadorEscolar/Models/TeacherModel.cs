@@ -44,5 +44,5 @@ public class TeacherModel
 
 
     //Relating Teacher to ClassesSchedules 
-    public virtual ICollection<ClassScheduleModel> ClassesSchedules { get; set; }
+    public virtual ICollection<ClassScheduleModel> ClassSchedules { get; set; }
 }
