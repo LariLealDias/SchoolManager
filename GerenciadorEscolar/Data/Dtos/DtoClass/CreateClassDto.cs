@@ -26,4 +26,8 @@ public class CreateClassDto
     public string Shift { get; set; }
 
     public DateTime? CreatedAt { get; } = DateTime.Now;
+
+
+    //relationship between 1 Teacher with N Class
+    public int TeacherModelId { get; set; }
 }

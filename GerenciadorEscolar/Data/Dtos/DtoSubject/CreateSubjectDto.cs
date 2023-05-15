@@ -11,4 +11,8 @@ public class CreateSubjectDto
 
     public DateTime? CreatedAt { get; } = DateTime.Now;
 
+
+    //relationship between 1 Class with N Subjects
+    public int ClassModelId { get; set; }
+
 }

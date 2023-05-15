@@ -47,7 +47,7 @@ namespace GerenciadorEscolar.Migrations
 
                     b.HasIndex("TeacherModelId");
 
-                    b.ToTable("Classes");
+                    b.ToTable("Classes", (string)null);
                 });
 
             modelBuilder.Entity("GerenciadorEscolar.Models.ClassScheduleModel", b =>
@@ -68,7 +68,7 @@ namespace GerenciadorEscolar.Migrations
 
                     b.HasIndex("ClassModelId");
 
-                    b.ToTable("ClassSchedules");
+                    b.ToTable("ClassSchedules", (string)null);
                 });
 
             modelBuilder.Entity("GerenciadorEscolar.Models.StudentModel", b =>
@@ -105,7 +105,7 @@ namespace GerenciadorEscolar.Migrations
                     b.HasIndex("ClassModelId")
                         .IsUnique();
 
-                    b.ToTable("Students");
+                    b.ToTable("Students", (string)null);
                 });
 
             modelBuilder.Entity("GerenciadorEscolar.Models.SubjectModel", b =>
@@ -126,7 +126,7 @@ namespace GerenciadorEscolar.Migrations
 
                     b.HasIndex("ClassModelId");
 
-                    b.ToTable("Subjects");
+                    b.ToTable("Subjects", (string)null);
                 });
 
             modelBuilder.Entity("GerenciadorEscolar.Models.TeacherModel", b =>
@@ -163,7 +163,7 @@ namespace GerenciadorEscolar.Migrations
                     b.HasIndex("SubjectModelId")
                         .IsUnique();
 
-                    b.ToTable("Teachers");
+                    b.ToTable("Teachers", (string)null);
                 });
 
             modelBuilder.Entity("GerenciadorEscolar.Models.ClassModel", b =>

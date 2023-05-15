@@ -17,7 +17,7 @@ public class SubjectModel
     public virtual TeacherModel TeacherModel { get; set; }
 
 
-    //Accessing relationship 1 Student to multiple Subjects
+    //Accessing relationship 1 Class to multiple Subjects
     public int? ClassModelId { get; set; }
     public virtual ClassModel ClassModel { get; set; }
 }

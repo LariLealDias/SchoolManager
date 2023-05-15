@@ -1,5 +1,4 @@
 ﻿using GerenciadorEscolar.Data.Dtos.DtoSubject;
-using GerenciadorEscolar.Models;
 
 namespace GerenciadorEscolar.Data.Dtos.DtoClass;
 

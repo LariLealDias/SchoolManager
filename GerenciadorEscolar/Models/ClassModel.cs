@@ -7,7 +7,6 @@ public class ClassModel
 {
   
     [Key]
-    //[Required]
     public int Id { get; set; }
 
 
