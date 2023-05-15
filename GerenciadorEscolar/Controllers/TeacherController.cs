@@ -20,7 +20,19 @@ public class TeacherController : ControllerBase
         _contex = contex;
     }
 
+
+    #region ----------------------   Ducumentação API ---------------------
+    /// <summary>
+    /// Criar um Professor ao banco de dados e retornar informações no Header  
+    /// </summary>
+    /// <param name="teacherDto">Objeto com os campos necessários para criação de um Professor</param>
+    /// <returns> retornar seus dados com Location no Header </returns>
+    /// <response code="201">Caso inserção seja feita com sucesso</response>
+    /// <response code="400">Erro ao criar Professor</response>
+    #endregion
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult CreateTeacher([FromBody] CreateTeacherDto teacherDto)
     {
         try
@@ -39,7 +51,18 @@ public class TeacherController : ControllerBase
     }
 
 
+
+    #region ----------------------   Ducumentação API ---------------------
+    /// <summary>
+    /// Retorna uma lista de Professores do banco de dados conforme a paginação
+    /// </summary>
+    /// <param name="skip">primeiro dado para a paginação </param>
+    /// <param name="take">ultimo dado para a paginação</param>
+    /// <returns> lista mapeada com todas as instancias </returns>
+    /// <response code="200">Caso o retorno seja feito com sucesso</response>
+    #endregion
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public IEnumerable<ReadTeacherDto> GetTeachers([FromQuery] int skip = 0,
                                                    [FromQuery] int take = 10) 
     {
@@ -54,8 +77,18 @@ public class TeacherController : ControllerBase
     }
 
 
-
+    #region ----------------------   Ducumentação API ---------------------
+    /// <summary>
+    /// Retorna 1 objeto de Professor do banco de dados conforme seu Id
+    /// </summary>
+    /// <param name="id"> dado para encontra o Professor especifico no banco de dados </param>
+    /// <returns> dado de um único Professor </returns>
+    /// <response code="200">Caso o retorno seja feito com sucesso</response>
+    /// <response code="400">Erro ao retornar a Disciplina</response>
+    #endregion
     [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult GetTeacherById(int id)
     {
         try
@@ -75,7 +108,21 @@ public class TeacherController : ControllerBase
         }
     }
 
+
+
+    #region ----------------------   Ducumentação API ---------------------
+    /// <summary>
+    /// Atualiza parcialmente o objeto de Professor do banco de dados conforme seu Id
+    /// </summary>
+    /// <param name="id"> dado para encontrar um Professor especifico no banco de dados </param>
+    /// <param name="patch"> dado para configurar a modificação parcial do objeto </param>
+    /// <returns> dados de um único Professor que foi modificado </returns>
+    /// <response code="200">Caso o retorno seja feito com sucesso</response>
+    /// <response code="400">Erro ao modificar a Disciplina</response>
+    #endregion
     [HttpPatch("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult PartiallyUpdateTeacher(int id, JsonPatchDocument<UpdateTeacherDto> patch)
     {
         try
@@ -104,7 +151,20 @@ public class TeacherController : ControllerBase
         }
     }
 
+
+
+    #region ----------------------   Ducumentação API ---------------------
+    /// <summary>
+    /// Deleta objeto de Professor do banco de dados conforme seu Id
+    /// </summary>
+    /// <param name="id"> dado para encontrar Professor especifico no banco de dados </param>
+    /// <returns> dados de um único Professor que foi modificado </returns>
+    /// <response code="204">Caso o retorno seja feito com sucesso</response>
+    /// <response code="400">Erro ao deletar a Disciplina</response>
+    #endregion
     [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult DeleteTeacher(int id)
     {
         try

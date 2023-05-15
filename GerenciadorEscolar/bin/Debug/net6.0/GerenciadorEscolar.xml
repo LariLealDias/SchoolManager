@@ -124,5 +124,97 @@
             <response code="204">Caso o retorno seja feito com sucesso</response>
             <response code="400">Erro ao criar o aluno</response>
         </member>
+        <member name="M:GerenciadorEscolar.Controllers.SubjectController.CreateSuject(GerenciadorEscolar.Data.Dtos.DtoSubject.CreateSubjectDto)">
+            <summary>
+            Criar uma Disciplina ao banco de dados e retornar informações no Header  
+            </summary>
+            <param name="subjectDto">Objeto com os campos necessários para criação de uma Disciplina</param>
+            <returns> retornar seus dados com Location no Header </returns>
+            <response code="201">Caso inserção seja feita com sucesso</response>
+            <response code="400">Erro ao criar a Disciplina</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.SubjectController.GetSubjects(System.Int32,System.Int32)">
+            <summary>
+            Retorna uma lista de Disciplinas do banco de dados conforme a paginação
+            </summary>
+            <param name="skip">primeiro dado para a paginação </param>
+            <param name="take">ultimo dado para a paginação</param>
+            <returns> lista mapeada com todas as instancias </returns>
+            <response code="200">Caso o retorno seja feito com sucesso</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.SubjectController.GetSubjectById(System.Int32)">
+            <summary>
+            Retorna 1 objeto de Disciplina do banco de dados conforme seu Id
+            </summary>
+            <param name="id"> dado para encontra a Disciplina especifica no banco de dados </param>
+            <returns> dado de um única Disciplina </returns>
+            <response code="200">Caso o retorno seja feito com sucesso</response>
+            <response code="400">Erro ao criar a Disciplina</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.SubjectController.PartiallyUpdateSubject(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{GerenciadorEscolar.Data.Dtos.DtoSubject.UpdateSubjectDto})">
+            <summary>
+            Atualiza parcialmente o objeto de Disciplina do banco de dados conforme seu Id
+            </summary>
+            <param name="id"> dado para encontrar uma Disciplina especifica no banco de dados </param>
+            <param name="patch"> dado para configurar a modificação parcial do objeto </param>
+            <returns> dados de uma única Disciplina que foi modificado </returns>
+            <response code="200">Caso o retorno seja feito com sucesso</response>
+            <response code="400">Erro ao criar a Disciplina</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.SubjectController.DeleteSubject(System.Int32)">
+            <summary>
+            Deleta objeto de Disciplina do banco de dados conforme seu Id
+            </summary>
+            <param name="id"> dado para encontra a Disciplina especifica no banco de dados </param>
+            <returns> dados de uma única Disciplina que foi modificado </returns>
+            <response code="204">Caso o retorno seja feito com sucesso</response>
+            <response code="400">Erro ao deletar a Disciplina</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.TeacherController.CreateTeacher(GerenciadorEscolar.Data.Dtos.DtoTeacher.CreateTeacherDto)">
+            <summary>
+            Criar um Professor ao banco de dados e retornar informações no Header  
+            </summary>
+            <param name="teacherDto">Objeto com os campos necessários para criação de um Professor</param>
+            <returns> retornar seus dados com Location no Header </returns>
+            <response code="201">Caso inserção seja feita com sucesso</response>
+            <response code="400">Erro ao criar Professor</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.TeacherController.GetTeachers(System.Int32,System.Int32)">
+            <summary>
+            Retorna uma lista de Professores do banco de dados conforme a paginação
+            </summary>
+            <param name="skip">primeiro dado para a paginação </param>
+            <param name="take">ultimo dado para a paginação</param>
+            <returns> lista mapeada com todas as instancias </returns>
+            <response code="200">Caso o retorno seja feito com sucesso</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.TeacherController.GetTeacherById(System.Int32)">
+            <summary>
+            Retorna 1 objeto de Professor do banco de dados conforme seu Id
+            </summary>
+            <param name="id"> dado para encontra o Professor especifico no banco de dados </param>
+            <returns> dado de um único Professor </returns>
+            <response code="200">Caso o retorno seja feito com sucesso</response>
+            <response code="400">Erro ao retornar a Disciplina</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.TeacherController.PartiallyUpdateTeacher(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{GerenciadorEscolar.Data.Dtos.DtoTeacher.UpdateTeacherDto})">
+            <summary>
+            Atualiza parcialmente o objeto de Professor do banco de dados conforme seu Id
+            </summary>
+            <param name="id"> dado para encontrar um Professor especifico no banco de dados </param>
+            <param name="patch"> dado para configurar a modificação parcial do objeto </param>
+            <returns> dados de um único Professor que foi modificado </returns>
+            <response code="200">Caso o retorno seja feito com sucesso</response>
+            <response code="400">Erro ao modificar a Disciplina</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.TeacherController.DeleteTeacher(System.Int32)">
+            <summary>
+            Deleta objeto de Professor do banco de dados conforme seu Id
+            </summary>
+            <param name="id"> dado para encontrar Professor especifico no banco de dados </param>
+            <returns> dados de um único Professor que foi modificado </returns>
+            <response code="204">Caso o retorno seja feito com sucesso</response>
+            <response code="400">Erro ao deletar a Disciplina</response>
+        </member>
     </members>
 </doc>
