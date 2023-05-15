@@ -24,7 +24,20 @@ public class SubjectController : ControllerBase
         _log = log;
     }
 
+
+
+    #region ----------------------   Ducumentação API ---------------------
+    /// <summary>
+    /// Criar uma Disciplina ao banco de dados e retornar informações no Header  
+    /// </summary>
+    /// <param name="subjectDto">Objeto com os campos necessários para criação de uma Disciplina</param>
+    /// <returns> retornar seus dados com Location no Header </returns>
+    /// <response code="201">Caso inserção seja feita com sucesso</response>
+    /// <response code="400">Erro ao criar a Disciplina</response>
+    #endregion
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult CreateSuject([FromBody] CreateSubjectDto subjectDto)
     {
             //_log.LogInformation("Fui chamado");
@@ -45,7 +58,17 @@ public class SubjectController : ControllerBase
 
 
 
+    #region ----------------------   Ducumentação API ---------------------
+    /// <summary>
+    /// Retorna uma lista de Disciplinas do banco de dados conforme a paginação
+    /// </summary>
+    /// <param name="skip">primeiro dado para a paginação </param>
+    /// <param name="take">ultimo dado para a paginação</param>
+    /// <returns> lista mapeada com todas as instancias </returns>
+    /// <response code="200">Caso o retorno seja feito com sucesso</response>
+    #endregion
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public IEnumerable<ReadSubjectDto> GetSubjects([FromQuery] int skip = 0,
                                                    [FromQuery] int take = 10) 
     {
@@ -60,8 +83,18 @@ public class SubjectController : ControllerBase
     }
 
 
-
+    #region ----------------------   Ducumentação API ---------------------
+    /// <summary>
+    /// Retorna 1 objeto de Disciplina do banco de dados conforme seu Id
+    /// </summary>
+    /// <param name="id"> dado para encontra a Disciplina especifica no banco de dados </param>
+    /// <returns> dado de um única Disciplina </returns>
+    /// <response code="200">Caso o retorno seja feito com sucesso</response>
+    /// <response code="400">Erro ao criar a Disciplina</response>
+    #endregion
     [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult GetSubjectById(int id)
     {
         try
@@ -81,7 +114,20 @@ public class SubjectController : ControllerBase
     }
 
 
+
+    #region ----------------------   Ducumentação API ---------------------
+    /// <summary>
+    /// Atualiza parcialmente o objeto de Disciplina do banco de dados conforme seu Id
+    /// </summary>
+    /// <param name="id"> dado para encontrar uma Disciplina especifica no banco de dados </param>
+    /// <param name="patch"> dado para configurar a modificação parcial do objeto </param>
+    /// <returns> dados de uma única Disciplina que foi modificado </returns>
+    /// <response code="200">Caso o retorno seja feito com sucesso</response>
+    /// <response code="400">Erro ao criar a Disciplina</response>
+    #endregion
     [HttpPatch("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult PartiallyUpdateSubject(int id, JsonPatchDocument<UpdateSubjectDto> patch)
     {
         try
@@ -112,7 +158,19 @@ public class SubjectController : ControllerBase
     }
 
 
-    [HttpDelete("{id}")] 
+
+    #region ----------------------   Ducumentação API ---------------------
+    /// <summary>
+    /// Deleta objeto de Disciplina do banco de dados conforme seu Id
+    /// </summary>
+    /// <param name="id"> dado para encontra a Disciplina especifica no banco de dados </param>
+    /// <returns> dados de uma única Disciplina que foi modificado </returns>
+    /// <response code="204">Caso o retorno seja feito com sucesso</response>
+    /// <response code="400">Erro ao deletar a Disciplina</response>
+    #endregion
+    [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult DeleteSubject(int id) 
     {
         try

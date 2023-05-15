@@ -59,6 +59,25 @@
             <response code="201">Caso inserção seja feita com sucesso</response>
             <response code="400">Erro ao criar o Turma</response>
         </member>
+        <member name="M:GerenciadorEscolar.Controllers.ClassScheduleController.GetClassSchedule(System.Int32,System.Int32)">
+            <summary>
+            Retorna uma lista de Aulas do banco de dados conforme a paginação
+            </summary>
+            <param name="skip">primeiro dado para a paginação </param>
+            <param name="take">ultimo dado para a paginação</param>
+            <returns> lista mapeada com todas as instancias </returns>
+            <response code="200">Caso o retorno seja feito com sucesso</response>
+        </member>
+        <member name="M:GerenciadorEscolar.Controllers.ClassScheduleController.GetClassScheduleByTwoIds(System.Int32,System.Int32)">
+            <summary>
+            Retorna 1 objeto de Aula do banco de dados conforme o Id do Professor e o Id da Turma 
+            </summary>
+            <param name="teacherModelId"> dado para encontra o Professor relacionado a Aula no banco de dados </param>
+            <param name="classModelId"> dado para encontra a Turma relacionada a Aula no banco de dados </param>
+            <returns> dado de uma única Aula </returns>
+            <response code="200">Caso o retorno seja feito com sucesso</response>
+            <response code="400">Erro ao criar a Turma</response>
+        </member>
         <member name="M:GerenciadorEscolar.Controllers.StudentController.CreateStudent(GerenciadorEscolar.Data.Dtos.DtoStudent.CreateStudentDto)">
             <summary>
             Criar um Aluno ao banco de dados e retornar informações no Header
