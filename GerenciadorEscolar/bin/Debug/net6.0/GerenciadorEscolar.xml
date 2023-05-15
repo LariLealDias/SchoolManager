@@ -6,12 +6,12 @@
     <members>
         <member name="M:GerenciadorEscolar.Controllers.ClassController.CreateClass(GerenciadorEscolar.Data.Dtos.DtoClass.CreateClassDto)">
             <summary>
-            Criar uma Turma ao banco de dados e retornar informações no Header
+            Criar uma Turma ao banco de dados e retornar informações no Header e o objeto criado no Body
             </summary>
-            <param name="classDto">Objeto com os campos necessários para criação de um Aluno</param>
-            <returns> retornar seus dados com Location no Header </returns>
+            <param name="classDto">Objeto com os campos necessários para criação de uma Turma</param>
+            <returns> retornar seus dados no Body e com Location no Header </returns>
             <response code="201">Caso inserção seja feita com sucesso</response>
-            <response code="400">Erro ao criar o Turma</response>
+            <response code="400">Erro ao criar Turma</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.ClassController.GetClass(System.Int32,System.Int32)">
             <summary>
@@ -26,38 +26,38 @@
             <summary>
             Retorna 1 objeto de Turma do banco de dados conforme seu Id
             </summary>
-            <param name="id"> dado para encontra o Turma especifico no banco de dados </param>
-            <returns> dado de um um único Turma </returns>
+            <param name="id"> dado para encontra a Turma especifica no banco de dados </param>
+            <returns> dado de uma única Turma </returns>
             <response code="200">Caso o retorno seja feito com sucesso</response>
             <response code="400">Erro ao criar o aluno</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.ClassController.PartiallyUpdateClass(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{GerenciadorEscolar.Data.Dtos.DtoClass.UpdateClassDto})">
             <summary>
-            Atualiza objeto de Turma do banco de dados conforme seu Id
+            Atualiza parcialmente um objeto de Turma do banco de dados conforme seu Id
             </summary>
             <param name="id"> dado para encontrar uma Turma especifica no banco de dados </param>
             <param name="patch"> dado para configurar a modificação parcial do objeto </param>
             <returns> dados de uma única Turma que foi modificado </returns>
-            <response code="200">Caso o retorno seja feito com sucesso</response>
-            <response code="400">Erro ao criar o Turma</response>
+            <response code="200">Caso a modificação seja feito com sucesso</response>
+            <response code="400">Erro ao modificar Turma</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.ClassController.DeleteClass(System.Int32)">
             <summary>
             Deleta objeto de Turma do banco de dados conforme seu Id
             </summary>
             <param name="id"> dado para encontra a Turma especifica no banco de dados </param>
-            <returns> dados de uma única Turma que foi modificado </returns>
-            <response code="204">Caso o retorno seja feito com sucesso</response>
-            <response code="400">Erro ao criar a Turma</response>
+            <returns> sem contéudo para retornar </returns>
+            <response code="204">Caso a operação deletar seja feito com sucesso</response>
+            <response code="400">Erro ao deletar a Turma</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.ClassScheduleController.CreateClassSchedule(GerenciadorEscolar.Data.Dtos.DtoClassSchedule.CreateClassScheduleDto)">
             <summary>
-            Criar uma Aula ao banco de dados e retornar informações no Header
+            Criar uma Aula ao banco de dados e retornar informações no Header e o objeto criado no Body
             </summary>
-            <param name="classScheduleDto">Objeto com os campos necessários para criação de um Aula</param>
-            <returns> retornar seus dados com Location no Header </returns>
+            <param name="classScheduleDto">Objeto com os campos necessários para criação de uma Aula</param>
+            <returns> retornar seus dados no Body e com Location no Header </returns>
             <response code="201">Caso inserção seja feita com sucesso</response>
-            <response code="400">Erro ao criar o Turma</response>
+            <response code="400">Erro ao criar Aula</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.ClassScheduleController.GetClassSchedule(System.Int32,System.Int32)">
             <summary>
@@ -80,16 +80,16 @@
         </member>
         <member name="M:GerenciadorEscolar.Controllers.StudentController.CreateStudent(GerenciadorEscolar.Data.Dtos.DtoStudent.CreateStudentDto)">
             <summary>
-            Criar um Aluno ao banco de dados e retornar informações no Header
+            Criar um Aluno ao banco de dados e retornar informações no Header e o objeto criado no Body
             </summary>
             <param name="studentDto">Objeto com os campos necessários para criação de um Aluno</param>
-            <returns> retornar seus dados com Location no Header </returns>
+            <returns> retornar seus dados no Body e com Location no Header </returns>
             <response code="201">Caso inserção seja feita com sucesso</response>
-            <response code="400">Erro ao criar o aluno</response>
+            <response code="400">Erro ao criar Aluno</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.StudentController.GetStudent(System.Int32,System.Int32)">
             <summary>
-            Retorna uma lista de Aluno do banco de dados conforme a paginação
+            Retorna uma lista de Alunos do banco de dados conforme a paginação
             </summary>
             <param name="skip">primeiro dado para a paginação </param>
             <param name="take">ultimo dado para a paginação</param>
@@ -101,37 +101,37 @@
             Retorna 1 objeto de Aluno do banco de dados conforme seu Id
             </summary>
             <param name="id"> dado para encontra o Aluno especifico no banco de dados </param>
-            <returns> Um único aluno </returns>
+            <returns> dado de um único Aluno </returns>
             <response code="200">Caso o retorno seja feito com sucesso</response>
             <response code="400">Erro ao criar o aluno</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.StudentController.PartiallyUpdateStudent(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{GerenciadorEscolar.Data.Dtos.DtoStudent.UpdateStudentDto})">
             <summary>
-            Atualiza objeto de Aluno do banco de dados conforme seu Id
+            Atualiza parcialmente um objeto de Aluno do banco de dados conforme seu Id
             </summary>
             <param name="id"> dado para encontra o Aluno especifico no banco de dados </param>
             <param name="patch"> dado configurar a modificação parcial do objeto </param>
             <returns> dados de um único aluno que foi modificado </returns>
-            <response code="200">Caso o retorno seja feito com sucesso</response>
-            <response code="400">Erro ao criar o aluno</response>
+            <response code="200">Caso a modificação seja feito com sucesso</response>
+            <response code="400">Erro ao modificar Aluno</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.StudentController.DeleteStudent(System.Int32)">
             <summary>
             Deleta objeto de Aluno do banco de dados conforme seu Id
             </summary>
             <param name="id"> dado para encontra o Aluno especifico no banco de dados </param>
-            <returns> dados de um único aluno que foi modificado </returns>
-            <response code="204">Caso o retorno seja feito com sucesso</response>
-            <response code="400">Erro ao criar o aluno</response>
+            <returns> sem contéudo para retornar </returns>
+            <response code="204">Caso a operação deletar seja feito com sucesso</response>
+            <response code="400">Erro ao deletar o Aluno</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.SubjectController.CreateSuject(GerenciadorEscolar.Data.Dtos.DtoSubject.CreateSubjectDto)">
             <summary>
-            Criar uma Disciplina ao banco de dados e retornar informações no Header  
+            Criar uma Disciplina ao banco de dados e retornar informações no Header e o objeto criado no Body
             </summary>
             <param name="subjectDto">Objeto com os campos necessários para criação de uma Disciplina</param>
-            <returns> retornar seus dados com Location no Header </returns>
+            <returns>retornar seus dados no Body e com Location no Header </returns>
             <response code="201">Caso inserção seja feita com sucesso</response>
-            <response code="400">Erro ao criar a Disciplina</response>
+            <response code="400">Erro ao criar Disciplina</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.SubjectController.GetSubjects(System.Int32,System.Int32)">
             <summary>
@@ -147,7 +147,7 @@
             Retorna 1 objeto de Disciplina do banco de dados conforme seu Id
             </summary>
             <param name="id"> dado para encontra a Disciplina especifica no banco de dados </param>
-            <returns> dado de um única Disciplina </returns>
+            <returns> dado de uma única Disciplina </returns>
             <response code="200">Caso o retorno seja feito com sucesso</response>
             <response code="400">Erro ao criar a Disciplina</response>
         </member>
@@ -158,24 +158,24 @@
             <param name="id"> dado para encontrar uma Disciplina especifica no banco de dados </param>
             <param name="patch"> dado para configurar a modificação parcial do objeto </param>
             <returns> dados de uma única Disciplina que foi modificado </returns>
-            <response code="200">Caso o retorno seja feito com sucesso</response>
-            <response code="400">Erro ao criar a Disciplina</response>
+            <response code="200">Caso a modificação seja feito com sucesso</response>
+            <response code="400">Erro modificar Disciplina</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.SubjectController.DeleteSubject(System.Int32)">
             <summary>
             Deleta objeto de Disciplina do banco de dados conforme seu Id
             </summary>
             <param name="id"> dado para encontra a Disciplina especifica no banco de dados </param>
-            <returns> dados de uma única Disciplina que foi modificado </returns>
-            <response code="204">Caso o retorno seja feito com sucesso</response>
+            <returns> sem contéudo para retornar </returns>
+            <response code="204">Caso a operação deletar seja feito com sucesso</response>
             <response code="400">Erro ao deletar a Disciplina</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.TeacherController.CreateTeacher(GerenciadorEscolar.Data.Dtos.DtoTeacher.CreateTeacherDto)">
             <summary>
-            Criar um Professor ao banco de dados e retornar informações no Header  
+            Criar um Professor ao banco de dados e retornar informações no Header e o objeto criado no Body
             </summary>
             <param name="teacherDto">Objeto com os campos necessários para criação de um Professor</param>
-            <returns> retornar seus dados com Location no Header </returns>
+            <returns> retornar seus dados no Body e com Location no Header </returns>
             <response code="201">Caso inserção seja feita com sucesso</response>
             <response code="400">Erro ao criar Professor</response>
         </member>
@@ -204,16 +204,16 @@
             <param name="id"> dado para encontrar um Professor especifico no banco de dados </param>
             <param name="patch"> dado para configurar a modificação parcial do objeto </param>
             <returns> dados de um único Professor que foi modificado </returns>
-            <response code="200">Caso o retorno seja feito com sucesso</response>
-            <response code="400">Erro ao modificar a Disciplina</response>
+            <response code="200">Caso a modificação seja feito com sucesso</response>
+            <response code="400">Erro ao modificar Professor</response>
         </member>
         <member name="M:GerenciadorEscolar.Controllers.TeacherController.DeleteTeacher(System.Int32)">
             <summary>
             Deleta objeto de Professor do banco de dados conforme seu Id
             </summary>
-            <param name="id"> dado para encontrar Professor especifico no banco de dados </param>
-            <returns> dados de um único Professor que foi modificado </returns>
-            <response code="204">Caso o retorno seja feito com sucesso</response>
+            <param name="id"> dado para encontrar o Professor especifico no banco de dados </param>
+            <returns> sem contéudo para retornar </returns>
+            <response code="204">Caso a operação deletar seja feito com sucesso</response>
             <response code="400">Erro ao deletar a Disciplina</response>
         </member>
     </members>

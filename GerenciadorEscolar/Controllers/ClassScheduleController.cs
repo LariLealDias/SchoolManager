@@ -21,12 +21,12 @@ public class ClassScheduleController : ControllerBase
 
     #region ----------------------   Ducumentação API ---------------------
     /// <summary>
-    /// Criar uma Aula ao banco de dados e retornar informações no Header
+    /// Criar uma Aula ao banco de dados e retornar informações no Header e o objeto criado no Body
     /// </summary>
-    /// <param name="classScheduleDto">Objeto com os campos necessários para criação de um Aula</param>
-    /// <returns> retornar seus dados com Location no Header </returns>
+    /// <param name="classScheduleDto">Objeto com os campos necessários para criação de uma Aula</param>
+    /// <returns> retornar seus dados no Body e com Location no Header </returns>
     /// <response code="201">Caso inserção seja feita com sucesso</response>
-    /// <response code="400">Erro ao criar o Turma</response>
+    /// <response code="400">Erro ao criar Aula</response>
     #endregion
     [HttpPost]
     public IActionResult CreateClassSchedule([FromBody] CreateClassScheduleDto classScheduleDto)

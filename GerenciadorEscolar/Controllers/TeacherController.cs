@@ -23,10 +23,10 @@ public class TeacherController : ControllerBase
 
     #region ----------------------   Ducumentação API ---------------------
     /// <summary>
-    /// Criar um Professor ao banco de dados e retornar informações no Header  
+    /// Criar um Professor ao banco de dados e retornar informações no Header e o objeto criado no Body
     /// </summary>
     /// <param name="teacherDto">Objeto com os campos necessários para criação de um Professor</param>
-    /// <returns> retornar seus dados com Location no Header </returns>
+    /// <returns> retornar seus dados no Body e com Location no Header </returns>
     /// <response code="201">Caso inserção seja feita com sucesso</response>
     /// <response code="400">Erro ao criar Professor</response>
     #endregion
@@ -117,8 +117,8 @@ public class TeacherController : ControllerBase
     /// <param name="id"> dado para encontrar um Professor especifico no banco de dados </param>
     /// <param name="patch"> dado para configurar a modificação parcial do objeto </param>
     /// <returns> dados de um único Professor que foi modificado </returns>
-    /// <response code="200">Caso o retorno seja feito com sucesso</response>
-    /// <response code="400">Erro ao modificar a Disciplina</response>
+    /// <response code="200">Caso a modificação seja feito com sucesso</response>
+    /// <response code="400">Erro ao modificar Professor</response>
     #endregion
     [HttpPatch("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -157,9 +157,9 @@ public class TeacherController : ControllerBase
     /// <summary>
     /// Deleta objeto de Professor do banco de dados conforme seu Id
     /// </summary>
-    /// <param name="id"> dado para encontrar Professor especifico no banco de dados </param>
-    /// <returns> dados de um único Professor que foi modificado </returns>
-    /// <response code="204">Caso o retorno seja feito com sucesso</response>
+    /// <param name="id"> dado para encontrar o Professor especifico no banco de dados </param>
+    /// <returns> sem contéudo para retornar </returns>
+    /// <response code="204">Caso a operação deletar seja feito com sucesso</response>
     /// <response code="400">Erro ao deletar a Disciplina</response>
     #endregion
     [HttpDelete("{id}")]

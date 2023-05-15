@@ -27,12 +27,12 @@ public class StudentController : ControllerBase
 
     #region ----------------------   Ducumentação API ---------------------
     /// <summary>
-    /// Criar um Aluno ao banco de dados e retornar informações no Header
+    /// Criar um Aluno ao banco de dados e retornar informações no Header e o objeto criado no Body
     /// </summary>
     /// <param name="studentDto">Objeto com os campos necessários para criação de um Aluno</param>
-    /// <returns> retornar seus dados com Location no Header </returns>
+    /// <returns> retornar seus dados no Body e com Location no Header </returns>
     /// <response code="201">Caso inserção seja feita com sucesso</response>
-    /// <response code="400">Erro ao criar o aluno</response>
+    /// <response code="400">Erro ao criar Aluno</response>
     #endregion
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
@@ -58,7 +58,7 @@ public class StudentController : ControllerBase
 
     #region ----------------------   Ducumentação API ---------------------
     /// <summary>
-    /// Retorna uma lista de Aluno do banco de dados conforme a paginação
+    /// Retorna uma lista de Alunos do banco de dados conforme a paginação
     /// </summary>
     /// <param name="skip">primeiro dado para a paginação </param>
     /// <param name="take">ultimo dado para a paginação</param>
@@ -98,7 +98,7 @@ public class StudentController : ControllerBase
     /// Retorna 1 objeto de Aluno do banco de dados conforme seu Id
     /// </summary>
     /// <param name="id"> dado para encontra o Aluno especifico no banco de dados </param>
-    /// <returns> Um único aluno </returns>
+    /// <returns> dado de um único Aluno </returns>
     /// <response code="200">Caso o retorno seja feito com sucesso</response>
     /// <response code="400">Erro ao criar o aluno</response>
     #endregion
@@ -128,13 +128,13 @@ public class StudentController : ControllerBase
 
     #region ----------------------   Ducumentação API ---------------------
     /// <summary>
-    /// Atualiza objeto de Aluno do banco de dados conforme seu Id
+    /// Atualiza parcialmente um objeto de Aluno do banco de dados conforme seu Id
     /// </summary>
     /// <param name="id"> dado para encontra o Aluno especifico no banco de dados </param>
     /// <param name="patch"> dado configurar a modificação parcial do objeto </param>
     /// <returns> dados de um único aluno que foi modificado </returns>
-    /// <response code="200">Caso o retorno seja feito com sucesso</response>
-    /// <response code="400">Erro ao criar o aluno</response>
+    /// <response code="200">Caso a modificação seja feito com sucesso</response>
+    /// <response code="400">Erro ao modificar Aluno</response>
     #endregion
     [HttpPatch("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -175,9 +175,9 @@ public class StudentController : ControllerBase
     /// Deleta objeto de Aluno do banco de dados conforme seu Id
     /// </summary>
     /// <param name="id"> dado para encontra o Aluno especifico no banco de dados </param>
-    /// <returns> dados de um único aluno que foi modificado </returns>
-    /// <response code="204">Caso o retorno seja feito com sucesso</response>
-    /// <response code="400">Erro ao criar o aluno</response>
+    /// <returns> sem contéudo para retornar </returns>
+    /// <response code="204">Caso a operação deletar seja feito com sucesso</response>
+    /// <response code="400">Erro ao deletar o Aluno</response>
     #endregion
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent )]

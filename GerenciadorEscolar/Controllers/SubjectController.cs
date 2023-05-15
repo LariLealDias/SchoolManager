@@ -28,12 +28,12 @@ public class SubjectController : ControllerBase
 
     #region ----------------------   Ducumentação API ---------------------
     /// <summary>
-    /// Criar uma Disciplina ao banco de dados e retornar informações no Header  
+    /// Criar uma Disciplina ao banco de dados e retornar informações no Header e o objeto criado no Body
     /// </summary>
     /// <param name="subjectDto">Objeto com os campos necessários para criação de uma Disciplina</param>
-    /// <returns> retornar seus dados com Location no Header </returns>
+    /// <returns>retornar seus dados no Body e com Location no Header </returns>
     /// <response code="201">Caso inserção seja feita com sucesso</response>
-    /// <response code="400">Erro ao criar a Disciplina</response>
+    /// <response code="400">Erro ao criar Disciplina</response>
     #endregion
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
@@ -88,7 +88,7 @@ public class SubjectController : ControllerBase
     /// Retorna 1 objeto de Disciplina do banco de dados conforme seu Id
     /// </summary>
     /// <param name="id"> dado para encontra a Disciplina especifica no banco de dados </param>
-    /// <returns> dado de um única Disciplina </returns>
+    /// <returns> dado de uma única Disciplina </returns>
     /// <response code="200">Caso o retorno seja feito com sucesso</response>
     /// <response code="400">Erro ao criar a Disciplina</response>
     #endregion
@@ -122,8 +122,8 @@ public class SubjectController : ControllerBase
     /// <param name="id"> dado para encontrar uma Disciplina especifica no banco de dados </param>
     /// <param name="patch"> dado para configurar a modificação parcial do objeto </param>
     /// <returns> dados de uma única Disciplina que foi modificado </returns>
-    /// <response code="200">Caso o retorno seja feito com sucesso</response>
-    /// <response code="400">Erro ao criar a Disciplina</response>
+    /// <response code="200">Caso a modificação seja feito com sucesso</response>
+    /// <response code="400">Erro modificar Disciplina</response>
     #endregion
     [HttpPatch("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -164,8 +164,8 @@ public class SubjectController : ControllerBase
     /// Deleta objeto de Disciplina do banco de dados conforme seu Id
     /// </summary>
     /// <param name="id"> dado para encontra a Disciplina especifica no banco de dados </param>
-    /// <returns> dados de uma única Disciplina que foi modificado </returns>
-    /// <response code="204">Caso o retorno seja feito com sucesso</response>
+    /// <returns> sem contéudo para retornar </returns>
+    /// <response code="204">Caso a operação deletar seja feito com sucesso</response>
     /// <response code="400">Erro ao deletar a Disciplina</response>
     #endregion
     [HttpDelete("{id}")]
