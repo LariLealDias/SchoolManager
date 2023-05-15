@@ -50,6 +50,15 @@
             <response code="204">Caso o retorno seja feito com sucesso</response>
             <response code="400">Erro ao criar a Turma</response>
         </member>
+        <member name="M:GerenciadorEscolar.Controllers.ClassScheduleController.CreateClassSchedule(GerenciadorEscolar.Data.Dtos.DtoClassSchedule.CreateClassScheduleDto)">
+            <summary>
+            Criar uma Aula ao banco de dados e retornar informações no Header
+            </summary>
+            <param name="classScheduleDto">Objeto com os campos necessários para criação de um Aula</param>
+            <returns> retornar seus dados com Location no Header </returns>
+            <response code="201">Caso inserção seja feita com sucesso</response>
+            <response code="400">Erro ao criar o Turma</response>
+        </member>
         <member name="M:GerenciadorEscolar.Controllers.StudentController.CreateStudent(GerenciadorEscolar.Data.Dtos.DtoStudent.CreateStudentDto)">
             <summary>
             Criar um Aluno ao banco de dados e retornar informações no Header
