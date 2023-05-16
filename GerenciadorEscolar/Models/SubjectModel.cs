@@ -18,6 +18,6 @@ public class SubjectModel
 
 
     //Accessing relationship 1 Class to multiple Subjects
-    public int? ClassModelId { get; set; }
-    public virtual ClassModel ClassModel { get; set; }
+    //public int? ClassModelId { get; set; }
+    //public virtual ClassModel ClassModel { get; set; }
 }

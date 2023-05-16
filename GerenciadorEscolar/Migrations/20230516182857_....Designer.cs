@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolManager.Data;
 
@@ -10,9 +11,10 @@ using SchoolManager.Data;
 namespace GerenciadorEscolar.Migrations
 {
     [DbContext(typeof(SchoolManagerContext))]
-    partial class SchoolManagerContextModelSnapshot : ModelSnapshot
+    [Migration("20230516182857_...")]
+    partial class _
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -207,9 +209,11 @@ namespace GerenciadorEscolar.Migrations
 
             modelBuilder.Entity("GerenciadorEscolar.Models.SubjectModel", b =>
                 {
-                    b.HasOne("GerenciadorEscolar.Models.ClassModel", null)
+                    b.HasOne("GerenciadorEscolar.Models.ClassModel", "ClassModel")
                         .WithMany("Subjects")
                         .HasForeignKey("ClassModelId");
+
+                    b.Navigation("ClassModel");
                 });
 
             modelBuilder.Entity("GerenciadorEscolar.Models.TeacherModel", b =>

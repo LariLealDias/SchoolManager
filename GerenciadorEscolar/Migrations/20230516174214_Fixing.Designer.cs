@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolManager.Data;
 
@@ -10,9 +11,10 @@ using SchoolManager.Data;
 namespace GerenciadorEscolar.Migrations
 {
     [DbContext(typeof(SchoolManagerContext))]
-    partial class SchoolManagerContextModelSnapshot : ModelSnapshot
+    [Migration("20230516174214_Fixing")]
+    partial class Fixing
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

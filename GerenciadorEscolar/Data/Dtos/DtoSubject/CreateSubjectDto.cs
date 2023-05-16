@@ -13,6 +13,6 @@ public class CreateSubjectDto
 
 
     //relationship between 1 Class with N Subjects
-    public int ClassModelId { get; set; }
+    //public int ClassModelId { get; set; }
 
 }

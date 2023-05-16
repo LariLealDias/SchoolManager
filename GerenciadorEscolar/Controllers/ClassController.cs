@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GerenciadorEscolar.Data.Dtos.DtoClass;
 using GerenciadorEscolar.Models;
+using GerenciadorEscolar.Services;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using SchoolManager.Data;
@@ -14,10 +15,12 @@ public class ClassController : ControllerBase
     //Dependence Injection
     private SchoolManagerContext _contex;
     private IMapper _mapper;
+    //private ClassService _classService;
     public ClassController(SchoolManagerContext contex, IMapper mapper)
     {
         _contex = contex;
         _mapper = mapper;
+        //_classService = classService;
     }
 
 
@@ -40,10 +43,18 @@ public class ClassController : ControllerBase
             ClassModel classModel = _mapper.Map<ClassModel>(classDto);
             _contex.Classes.Add(classModel);
             _contex.SaveChanges();
+
             return CreatedAtAction(nameof(GetClassById),
                                     new { id = classModel.Id },
                                     classModel);
-        } catch (Exception ex)
+
+
+            //var createdClass = _classService.CreateClass(classDto);
+            //var resourceUrl = Url.Action("GetClassById", new { id = createdClass.Id });
+
+            //return Created(resourceUrl, createdClass);
+        }
+        catch (Exception ex)
         {
             return BadRequest(ex.Message);
         }

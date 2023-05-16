@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using GerenciadorEscolar.Data.Dtos.DtoSubject;
-using GerenciadorEscolar.Data.Dtos.DtoTeacher;
 using GerenciadorEscolar.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -104,7 +103,7 @@ public class SubjectController : ControllerBase
             {
                 return NotFound();
             }
-            var subjectDto = _mapper.Map<ReadTeacherDto>(findSubjectById);
+            var subjectDto = _mapper.Map<ReadSubjectDto>(findSubjectById);
             return Ok(subjectDto);
         }
         catch (Exception ex) 
