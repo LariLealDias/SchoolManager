@@ -22,4 +22,9 @@ public class ClassService
         _classRepository.AddClassInDatabase(classModel);
         return classModel;
     }
+
+    public IEnumerable<ReadClassDto> GetPagingClass(int skip, int take)
+    {
+        return _mapper.Map<List<ReadClassDto>>(_classRepository.GetPagingInClassDatabase(skip, take).ToList());
+    }
 }

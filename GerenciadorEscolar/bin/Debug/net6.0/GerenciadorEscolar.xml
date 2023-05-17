@@ -13,7 +13,7 @@
             <response code="201">Caso inserção seja feita com sucesso</response>
             <response code="400">Erro ao criar Turma</response>
         </member>
-        <member name="M:GerenciadorEscolar.Controllers.ClassController.GetClass(System.Int32,System.Int32)">
+        <member name="M:GerenciadorEscolar.Controllers.ClassController.GetClasses(System.Int32,System.Int32)">
             <summary>
             Retorna uma lista de Turmas do banco de dados conforme a paginação
             </summary>

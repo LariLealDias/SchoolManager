@@ -98,10 +98,14 @@ public class ClassController : ControllerBase
     #endregion
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public IEnumerable<ReadClassDto> GetClass([FromQuery] int skip = 0,
+    public IEnumerable<ReadClassDto> GetClasses([FromQuery] int skip = 0,
                                             [FromQuery] int take = 10)
     {
-        return _mapper.Map< List<ReadClassDto> >(_contex.Classes.Skip(skip).Take(take).ToList());
+        #region implementation before Service and Repository
+        //return _mapper.Map< List<ReadClassDto> >(_contex.Classes.Skip(skip).Take(take).ToList());
+        #endregion
+
+        return _classService.GetPagingClass(skip, take);
     }
 
 

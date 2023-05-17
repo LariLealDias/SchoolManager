@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GerenciadorEscolar.Data.Dtos.DtoClass;
 using GerenciadorEscolar.Models;
 using SchoolManager.Data;
 
@@ -16,5 +17,10 @@ public class ClassRepository : IClassRepository
     {
         _contex.Classes.Add(classModel);
         _contex.SaveChanges();
+    }
+
+    public IEnumerable<ClassModel> GetPagingInClassDatabase(int skip = 0, int take = 10)
+    {
+        return _contex.Classes.Skip(skip).Take(take);
     }
 }
