@@ -21,8 +21,5 @@ public class ClassService
         ClassModel classModel = _mapper.Map<ClassModel>(classDto);
         _classRepository.AddClassInDatabase(classModel);
         return classModel;
-
     }
-
-
 }

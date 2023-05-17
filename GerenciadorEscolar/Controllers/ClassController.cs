@@ -15,12 +15,12 @@ public class ClassController : ControllerBase
     //Dependence Injection
     private SchoolManagerContext _contex;
     private IMapper _mapper;
-    //private ClassService _classService;
-    public ClassController(SchoolManagerContext contex, IMapper mapper)
+    private ClassService _classService;
+    public ClassController(SchoolManagerContext contex, IMapper mapper, ClassService classService)
     {
         _contex = contex;
         _mapper = mapper;
-        //_classService = classService;
+        _classService = classService;
     }
 
 
@@ -40,19 +40,44 @@ public class ClassController : ControllerBase
     {
         try
         {
-            ClassModel classModel = _mapper.Map<ClassModel>(classDto);
-            _contex.Classes.Add(classModel);
-            _contex.SaveChanges();
+            #region implementation before Service and Repository
+            //ClassModel classModel = _mapper.Map<ClassModel>(classDto);
+            //_contex.Classes.Add(classModel);
+            //_contex.SaveChanges();
 
-            return CreatedAtAction(nameof(GetClassById),
-                                    new { id = classModel.Id },
-                                    classModel);
+            //return CreatedAtAction(nameof(GetClassById),
+            //                        new { id = classModel.Id },
+            //                        classModel);
 
+            #endregion
 
-            //var createdClass = _classService.CreateClass(classDto);
-            //var resourceUrl = Url.Action("GetClassById", new { id = createdClass.Id });
+            if (classDto == null)
+                return BadRequest("Dados inválidos.");
 
-            //return Created(resourceUrl, createdClass);
+            //Calls service method to create an Class
+            ClassModel createdClass = _classService.CreateClass(classDto);
+
+            //Get current controller name
+            var controllerName = ControllerContext.ActionDescriptor.ControllerName;
+
+            //Get localhost Adress
+            var localhostAddress = HttpContext.Request.Host.ToUriComponent();
+
+            //Complets URL with localhost Adress + current controller name + current Id created
+            var resourceUrl = $"https://{localhostAddress}/{controllerName}/{createdClass.Id}";
+
+            //Object created to send response
+            var response = new
+            {
+                id = createdClass.Id,
+                grade = createdClass.Grade,
+                section = createdClass.Section,
+                Shift = createdClass.Shift,
+                teacherModelId = createdClass.TeacherModelId,
+            };
+         
+            // Return the response with HTTP 201 code + Object Created + Location of it in Header
+            return Created(resourceUrl, response);
         }
         catch (Exception ex)
         {

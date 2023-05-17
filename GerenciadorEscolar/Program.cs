@@ -4,6 +4,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using GerenciadorEscolar.Controllers;
+using GerenciadorEscolar.Services;
+using GerenciadorEscolar.Repository.RepositoryClass;
 
 var builder = WebApplication.CreateBuilder(args) ;
 
@@ -30,6 +33,12 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 #endregion
 
 builder.Services.AddControllers();
+
+#region Config Injection dependencies (Service and Repository)
+builder.Services.AddScoped<ClassService>();
+builder.Services.AddScoped<IClassRepository, ClassRepository>();
+#endregion
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
