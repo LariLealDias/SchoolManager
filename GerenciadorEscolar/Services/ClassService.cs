@@ -2,6 +2,7 @@
 using GerenciadorEscolar.Data.Dtos.DtoClass;
 using GerenciadorEscolar.Models;
 using GerenciadorEscolar.Repository.RepositoryClass;
+using Microsoft.AspNetCore.Mvc;
 using SchoolManager.Data;
 
 namespace GerenciadorEscolar.Services;
@@ -26,5 +27,19 @@ public class ClassService
     public IEnumerable<ReadClassDto> GetPagingClass(int skip, int take)
     {
         return _mapper.Map<List<ReadClassDto>>(_classRepository.GetPagingInClassDatabase(skip, take).ToList());
+    }
+
+    public ClassModel GetIdClass(int id)
+    {
+        var findId =_classRepository.FindClassByIdInDatabase(id);
+        return findId;
+    }
+
+    public ReadClassDto MappingTheGetIdClassInDto(int id)
+    {
+        var idClass = GetIdClass(id);
+        var classDto = _mapper.Map<ReadClassDto>(idClass);
+        return classDto;
+
     }
 }

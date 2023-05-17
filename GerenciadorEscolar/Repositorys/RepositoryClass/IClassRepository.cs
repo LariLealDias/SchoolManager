@@ -9,4 +9,5 @@ public interface IClassRepository
 
     IEnumerable<ClassModel> GetPagingInClassDatabase(int skip = 0, int take = 10);
 
+    ClassModel FindClassByIdInDatabase(int id);
 }

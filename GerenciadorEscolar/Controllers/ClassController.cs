@@ -126,12 +126,23 @@ public class ClassController : ControllerBase
     {
         try
         {
-            var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
-            if (findClassById == null)
+            #region implementation before Service and Repository
+            //var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
+            //if (findClassById == null)
+            //{
+            //    return NotFound();
+            //}
+            //var classDto = _mapper.Map<ReadClassDto>(findClassById);
+            //return Ok(classDto);
+            #endregion
+
+            var IdClass = _classService.GetIdClass(id);
+            if(IdClass == null)
             {
                 return NotFound();
             }
-            var classDto = _mapper.Map<ReadClassDto>(findClassById);
+
+            var classDto = _classService.MappingTheGetIdClassInDto(id);
             return Ok(classDto);
         }
         catch (Exception ex)

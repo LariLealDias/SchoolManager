@@ -23,4 +23,10 @@ public class ClassRepository : IClassRepository
     {
         return _contex.Classes.Skip(skip).Take(take);
     }
+
+    public ClassModel FindClassByIdInDatabase(int id) 
+    { 
+        var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
+        return findClassById;
+    }
 }
