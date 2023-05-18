@@ -229,13 +229,24 @@ public class ClassController : ControllerBase
     {
         try
         {
-            var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
-            if (findClassById == null)
+            #region implementation before Service and Repository
+            //var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
+            //if (findClassById == null)
+            //{
+            //    return NotFound();
+            //}
+            //_contex.Remove(findClassById);
+            //_contex.SaveChanges();
+            //return NoContent();
+            #endregion
+            var idClass = _classService.GetIdClass(id);
+            if (idClass == null)
             {
                 return NotFound();
             }
-            _contex.Remove(findClassById);
-            _contex.SaveChanges();
+            _classService.Remove(idClass);
+
+            _classService.SaveChanges();
             return NoContent();
         }
         catch (Exception ex) 

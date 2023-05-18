@@ -20,6 +20,11 @@ public class ClassRepository : IClassRepository
         _contex.SaveChanges();
     }
 
+    public void Remove(ClassModel idClass)
+    {
+        _contex.Remove(idClass);
+    }
+
     public ClassModel FindClassByIdInDatabase(int id)
     {
         var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);

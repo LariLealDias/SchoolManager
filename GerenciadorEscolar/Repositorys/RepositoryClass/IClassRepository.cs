@@ -12,4 +12,7 @@ public interface IClassRepository
     ClassModel FindClassByIdInDatabase(int id);
 
     void SaveChanges();
+    void Remove(ClassModel idClass);
+
+
 }

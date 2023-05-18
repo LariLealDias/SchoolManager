@@ -70,6 +70,11 @@ public class ClassService
     {
         _classRepository.SaveChanges();
     }
+    public void Remove(ClassModel idClass)
+    {
+        _classRepository.Remove(idClass);
+    }
+
 
 
 
