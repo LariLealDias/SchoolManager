@@ -13,13 +13,9 @@ namespace GerenciadorEscolar.Controllers;
 public class ClassController : ControllerBase
 {
     //Dependence Injection
-    private SchoolManagerContext _contex;
-    private IMapper _mapper;
     private ClassService _classService;
-    public ClassController(SchoolManagerContext contex, IMapper mapper, ClassService classService)
+    public ClassController(ClassService classService)
     {
-        _contex = contex;
-        _mapper = mapper;
         _classService = classService;
     }
 
