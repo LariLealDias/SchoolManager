@@ -13,20 +13,34 @@ public class ClassRepository : IClassRepository
     {
         _contex = contex;
     }
-    public void AddClassInDatabase(ClassModel classModel)
+
+    //Reusable methods
+    public void SaveChanges()
     {
-        _contex.Classes.Add(classModel);
         _contex.SaveChanges();
     }
 
+    public ClassModel FindClassByIdInDatabase(int id)
+    {
+        var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
+        return findClassById;
+    }
+
+    //Specific methods for Verbs HTTP
+    ////POST
+    public void AddClassInDatabase(ClassModel classModel)
+    {
+        _contex.Classes.Add(classModel);
+        SaveChanges();
+    }
+
+    ////GET
     public IEnumerable<ClassModel> GetPagingInClassDatabase(int skip = 0, int take = 10)
     {
         return _contex.Classes.Skip(skip).Take(take);
     }
 
-    public ClassModel FindClassByIdInDatabase(int id) 
-    { 
-        var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
-        return findClassById;
-    }
+   
+
+  
 }

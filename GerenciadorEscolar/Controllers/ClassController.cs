@@ -142,7 +142,7 @@ public class ClassController : ControllerBase
                 return NotFound();
             }
 
-            var classDto = _classService.MappingTheGetIdClassInDto(id);
+            var classDto = _classService.MappingClassInReadDto(id);
             return Ok(classDto);
         }
         catch (Exception ex)
@@ -170,23 +170,40 @@ public class ClassController : ControllerBase
     {
         try
         {
-            var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
-            if (findClassById == null)
+            #region implementation before Service and Repository
+            //var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
+            //if (findClassById == null)
+            //{
+            //    return NotFound();
+            //}
+
+            //var ClassToUpdate = _mapper.Map<UpdateClassDto>(findClassById);
+            //patch.ApplyTo(ClassToUpdate, ModelState);
+
+            //if (!TryValidateModel(ClassToUpdate))
+            //{
+            //    return ValidationProblem(ModelState);
+            //}
+
+
+            //_mapper.Map(ClassToUpdate, findClassById);
+            //_contex.SaveChanges();
+            //return Ok(_mapper.Map<ReadClassDto>(findClassById));
+            #endregion
+            var idClass = _classService.GetIdClass(id);
+            if (idClass == null)
             {
                 return NotFound();
             }
-
-            var ClassToUpdate = _mapper.Map<UpdateClassDto>(findClassById);
-            patch.ApplyTo(ClassToUpdate, ModelState);
-
-            if (!TryValidateModel(ClassToUpdate))
+            var classToUpdate = _classService.MappingClassInUpdateDto(id);
+            patch.ApplyTo(classToUpdate, ModelState);
+            if (!TryValidateModel(classToUpdate))
             {
                 return ValidationProblem(ModelState);
             }
-
-            _mapper.Map(ClassToUpdate, findClassById);
-            _contex.SaveChanges();
-            return Ok(_mapper.Map<ReadClassDto>(findClassById));
+            _classService.MappingTheObjectUpdatedIntoId(classToUpdate, idClass);
+            var readClassDtoMapping = _classService.MappingClassInReadDto(id);
+            return Ok(readClassDtoMapping);
         }
         catch (Exception ex)
         {
