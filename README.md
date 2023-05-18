@@ -54,6 +54,8 @@ API RESTfull e Fluent API que se comunica com o banco de dados MySQL com entidad
  * A prática de API RESTfull estão em todos os controller
  * A aplicação possui controle de exceção
  * Antes dos dados serem mapeados para o bando de dados, eles foram validados com [data annotation] na camada Model
+ * O projeto possui camdas de Repository e Service para serem aplicados no Controller
+ 
 
 <br><br>
 > **Documentação:** Este projeto possui documentação de suas rotas pelo swegger
