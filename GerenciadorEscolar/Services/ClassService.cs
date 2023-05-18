@@ -18,11 +18,22 @@ public class ClassService
         _mapper = mapper;
     }
 
+
+    //Reusable methods
+    public void SaveChanges()
+    {
+        _classRepository.SaveChanges();
+    }
+    public void Remove(ClassModel idClass)
+    {
+        _classRepository.Remove(idClass);
+    }
+
     //Method for POST
     public ClassModel CreateClass(CreateClassDto classDto)
     {
         ClassModel classModel = _mapper.Map<ClassModel>(classDto);
-        _classRepository.AddClassInDatabase(classModel);
+        _classRepository.AddClass(classModel);
         return classModel;
     }
 
@@ -30,14 +41,14 @@ public class ClassService
     //Method for GET
     public IEnumerable<ReadClassDto> GetPagingClass(int skip, int take)
     {
-        return _mapper.Map<List<ReadClassDto>>(_classRepository.GetPagingInClassDatabase(skip, take).ToList());
+        return _mapper.Map<List<ReadClassDto>>(_classRepository.GetPagingToClass(skip, take).ToList());
     }
 
 
     //Method to Find Class By ID
     public ClassModel GetIdClass(int id)
     {
-        var findId =_classRepository.FindClassByIdInDatabase(id);
+        var findId =_classRepository.FindClassById(id);
         return findId;
     }
 
@@ -65,17 +76,4 @@ public class ClassService
         SaveChanges();
         return mapping;
     }
-
-    public void SaveChanges()
-    {
-        _classRepository.SaveChanges();
-    }
-    public void Remove(ClassModel idClass)
-    {
-        _classRepository.Remove(idClass);
-    }
-
-
-
-
 }

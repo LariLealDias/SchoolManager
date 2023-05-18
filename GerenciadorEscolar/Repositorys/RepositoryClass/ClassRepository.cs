@@ -25,7 +25,7 @@ public class ClassRepository : IClassRepository
         _contex.Remove(idClass);
     }
 
-    public ClassModel FindClassByIdInDatabase(int id)
+    public ClassModel FindClassById(int id)
     {
         var findClassById = _contex.Classes.FirstOrDefault(x => x.Id == id);
         return findClassById;
@@ -33,19 +33,15 @@ public class ClassRepository : IClassRepository
 
     //Specific methods for Verbs HTTP
     ////POST
-    public void AddClassInDatabase(ClassModel classModel)
+    public void AddClass(ClassModel classModel)
     {
         _contex.Classes.Add(classModel);
         SaveChanges();
     }
 
     ////GET
-    public IEnumerable<ClassModel> GetPagingInClassDatabase(int skip = 0, int take = 10)
+    public IEnumerable<ClassModel> GetPagingToClass(int skip = 0, int take = 10)
     {
         return _contex.Classes.Skip(skip).Take(take);
     }
-
-   
-
-  
 }

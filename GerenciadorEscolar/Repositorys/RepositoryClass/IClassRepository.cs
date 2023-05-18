@@ -5,14 +5,12 @@ namespace GerenciadorEscolar.Repository.RepositoryClass;
 
 public interface IClassRepository
 {
-    void AddClassInDatabase(ClassModel classModel);
+    void AddClass(ClassModel classModel);
 
-    IEnumerable<ClassModel> GetPagingInClassDatabase(int skip = 0, int take = 10);
+    IEnumerable<ClassModel> GetPagingToClass(int skip = 0, int take = 10);
 
-    ClassModel FindClassByIdInDatabase(int id);
+    ClassModel FindClassById(int id);
 
     void SaveChanges();
     void Remove(ClassModel idClass);
-
-
 }

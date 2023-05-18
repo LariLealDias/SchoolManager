@@ -254,5 +254,4 @@ public class ClassController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
-
 }
