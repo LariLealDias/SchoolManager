@@ -2,7 +2,7 @@
 API de gerenciamento escolar
 <br><br><br>
 ## 🔋 STATUS 
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
+![Em Desenvolvimento](https://img.shields.io/badge/Status-%20Concluido-green?style=flat-square)
 <br><br><br>
 
 
